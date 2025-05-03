@@ -1,0 +1,1 @@
+OPTIONS="-c /etc/watchdog-fs/watchdog-fs.ini -a /etc/watchdog-fs/actions.d"

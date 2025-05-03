@@ -1,0 +1,14 @@
+[Unit]
+Description=watchdog-fs filesystem event action handler
+After=multi-user.target
+
+[Service]
+Type=simple
+Restart=always
+ExecStartPre=mkdir -p /run/watchdog-fs
+EnvironmentFile=/etc/sysconfig/watchdog-fs
+WorkingDirectory=/run/watchdog-fs
+ExecStart=/usr/sbin/watchdog-fs.py $OPTIONS
+
+[Install]
+WantedBy=multi-user.target
